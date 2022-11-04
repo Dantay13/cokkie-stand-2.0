@@ -3,13 +3,23 @@
 let seattle = {
   min: 23,
   max: 65,
-  avgCookies: 6.3
+  avgCookies: 6.3,
+  calRandomNum: function randomNumber(min, max) {
+      return Math.random() * (max - min) + min;
+    },
 }
+
+seattle.calRandomNum();
+
+console.log('this is the random numbers:', seattle.calRandomNum);
 
 let tokyo = {
     min: 3,
     max: 24,
-    avgCookies: 1.2
+    avgCookies: 1.2,
+    calRandomNum: function randomNumber(min, max) {
+        return Math.random() * (max - min) + min;
+      }
 }
 
 let dubai = {
