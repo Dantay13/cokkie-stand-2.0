@@ -6,7 +6,8 @@ function randomNumber(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-function Store(min, max, avgCookies, customersEachHour, cookiesPerHour) {
+function Store(storeName, min, max, avgCookies, customersEachHour, cookiesPerHour) {
+  this.storeName = storeName;
   this.min = min;
   this.max = max;
   this.avgCookies = avgCookies;
@@ -30,27 +31,27 @@ function Store(min, max, avgCookies, customersEachHour, cookiesPerHour) {
   }
 }
 
-let seattle = new Store(23, 65, 6.3, [], []);
+let seattle = new Store('Seattle', 23, 65, 6.3, [], []);
 console.log('This is seaatle:', seattle);
 seattle.calCustomerPerhour();
 seattle.calCustomerCookiesPerHour();
 
-let tokyo = new Store(3, 24, 1.2, [], []);
+let tokyo = new Store('Tokyo', 3, 24, 1.2, [], []);
 console.log('This is tokyo: ', tokyo);
 tokyo.calCustomerPerhour();
 tokyo.calCustomerCookiesPerHour();
 
-let dubai = new Store(11, 38, 3.7, [], []);
+let dubai = new Store('Dubai', 11, 38, 3.7, [], []);
 console.log('this is dubai: ', dubai);
 dubai.calCustomerPerhour();
 dubai.calCustomerCookiesPerHour();
 
-let paris = new Store(20, 38, 2.3, [], []);
+let paris = new Store('Paris', 20, 38, 2.3, [], []);
 console.log('this is paris: ', paris);
 paris.calCustomerPerhour();
 paris.calCustomerCookiesPerHour();  
 
-let lima = new Store(2, 16, 4.6, [], []);
+let lima = new Store('Lima', 2, 16, 4.6, [], []);
 console.log('this is lima: ', lima);
 lima.calCustomerPerhour();
 lima.calCustomerCookiesPerHour();
@@ -150,9 +151,9 @@ for (let i = 0; i < hours.length; i++) {
 Store.prototype.render = function() {
   let tableBody = document.getElementById('tableBody');
   let bodyRow = document.createElement('tr');
-  let emptyData = document.createElement('td');
-  emptyData.innerText = Store.name;
-  bodyRow.appendChild(emptyData); 
+  let storeNameData = document.createElement('td');
+  storeNameData.innerText = this.storeName;
+  bodyRow.appendChild(storeNameData); 
 
   // for (let i = 0; i < this.Store.length; i++) {
   //   let storeName = document.createElement('td');
