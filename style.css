@@ -4,6 +4,7 @@ table, th, td {
 
 table {
     border-spacing: 0px; /*this is only used for tables: this remove spaces between the borders*/
+    margin: auto;
 }
 
 th, td {
